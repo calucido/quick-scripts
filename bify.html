@@ -4,7 +4,7 @@
   <title>Turns Things into B Meme</title>
 </head>
 <body>
-  <input id="input" />
+  <input id="input" onkeydown="bify()" />
   <p id="output"></p>
   <script type="text/javascript">
   let bify = () => {
@@ -12,7 +12,7 @@
     let words = string.split(' ');
     for (let word in words) {
       words[word] = words[word].split('');
-      words[word][0] = String.fromCodePoint(0x1f171);
+      words[word][0] = String.fromCodePoint(127345) + String.fromCodePoint(65039);
       words[word] = words[word].join('');
       if (word == words.length - 1) {
         words = words.join(' ');
@@ -21,6 +21,5 @@
     document.querySelector('#output').innerText = words;
   };
   </script>
-module.exports = bify;
 </body>
 </html>
