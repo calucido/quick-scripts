@@ -2,17 +2,6 @@
 <html>
 <head>
   <title>Turns Things into B Meme</title>
-</head>
-<body>
-  <input id="input" onkeyup="bify()" />
-  <p id="output"></p>
-  <script type="text/javascript">
-  let bify = () => {
-    let string = document.querySelector('#input').value;
-    let words = string.split(' ');<!DOCTYPE html>
-<html>
-<head>
-  <title>Turns Things into B Meme</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 <body>
@@ -93,27 +82,5 @@
     gtag('config', 'UA-110545210-1');
   </script>
   <p id="footer-text">this.author = '🅱️alvin 🅱️ucido&nbsp;<a class="black-text" href="//github.com/calucido"><i class="fa fa-github-square"></i></a>&nbsp;<a class="black-text" href="//codepen.io/calucido"><i class="fa fa-codepen"></i></a>';</p>
-</body>
-</html>
-
-    for (let word in words) {
-      words[word] = words[word].split('');
-      words[word][0] = String.fromCodePoint(127345) + String.fromCodePoint(65039);
-      words[word] = words[word].join('');
-      if (word == words.length - 1) {
-        words = words.join(' ');
-      }
-    };
-    document.querySelector('#output').innerText = words;
-  };
-  </script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110545210-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-110545210-1');
-  </script>
 </body>
 </html>
