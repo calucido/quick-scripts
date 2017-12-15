@@ -9,7 +9,93 @@
   <script type="text/javascript">
   let bify = () => {
     let string = document.querySelector('#input').value;
+    let words = string.split(' ');<!DOCTYPE html>
+<html>
+<head>
+  <title>Turns Things into B Meme</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <h1>Text 🅱️ Meme-ifier</h1>
+      <textarea placeholder="type your text here to be memed" id="input" onkeyup="bify()" rows="5"></textarea>
+      <p id="output" onclick="copy()"></p>
+      <p onclick="copy()">(click to copy, my 🅱️ude)</p>
+    </div>
+  </div>
+  <style>
+    body {
+      margin-top: -2vh !important;
+    }
+    html, body {
+      width: 100%;
+      padding: 0;
+      height: 95%;
+      margin: 0;
+      background-color: #ddd;
+      font-family: "Helvetica",sans-serif;
+    }
+    .container {
+      width: 70%;
+      height: 100%;
+      margin-left: 15%;
+      margin-top: 5vh;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 5px 5px 5px #ccc;
+    }
+    .content {
+      width: 90%;
+      padding-left: 4%;
+      padding-top: 4%;
+    }
+    #input {
+      width:100%;
+      max-width:100%;
+    }
+    #footer-text {
+      position: absolute;
+      bottom: 0px;
+      margin-left: 14px;
+      margin-bottom: 14px;
+    }
+  </style>
+  <script type="text/javascript">
+  let bify = () => {
+    let string = document.querySelector('#input').value;
     let words = string.split(' ');
+    for (let word in words) {
+      words[word] = words[word].split('');
+      words[word][0] = String.fromCodePoint(127345) + String.fromCodePoint(65039);
+      words[word] = words[word].join('');
+      if (word == words.length - 1) {
+        words = words.join(' ');
+      }
+    };
+    document.querySelector('#output').innerText = words;
+  };
+  let copy = () => {
+    let temp = document.createElement('input');
+    document.querySelector('body').append(temp);
+    temp.value = document.querySelector('#output').innerText;
+    temp.select();
+    document.execCommand('copy');
+    temp.remove();
+  }
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110545210-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-110545210-1');
+  </script>
+  <p id="footer-text">this.author = '🅱️alvin 🅱️ucido&nbsp;<a class="black-text" href="//github.com/calucido"><i class="fa fa-github-square"></i></a>&nbsp;<a class="black-text" href="//codepen.io/calucido"><i class="fa fa-codepen"></i></a>';</p>
+</body>
+</html>
+
     for (let word in words) {
       words[word] = words[word].split('');
       words[word][0] = String.fromCodePoint(127345) + String.fromCodePoint(65039);
