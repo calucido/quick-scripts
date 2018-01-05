@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Makes Text ~Þorny~</title>
+  <title>Makes Text ~Thorny~</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 <body>
@@ -10,7 +10,7 @@
       <h1>"Th?" nah, more like þ</h1>
       <textarea placeholder="type your text here to be þorned" id="input" onkeyup="thornify()" rows="5"></textarea>
       <p id="output" onclick="copy()"></p>
-      <p onclick="copy()">(click to copy)</p>
+      <a href="#" onclick="copy()">(copy)</p>
     </div>
   </div>
   <style>
@@ -55,7 +55,8 @@
     let string = document.querySelector('#input').value;
     let words = string.split(' ');
     for (let word in words) {
-      words[word] = words[word].replace(/th/gi, 'þ');
+      words[word] = words[word].replace(/th/g, 'þ');
+      words[word] = words[word].replace(/Th/g, 'Þ');
       if (word == words.length - 1) {
         words = words.join(' ');
       }
